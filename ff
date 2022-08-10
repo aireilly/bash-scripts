@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# 
+# Return all files in current dir and lower that contain the search term.
+# Wrap sentence fragments in quotes.
+
+set -e
+
+SEARCH_TERM=$1
+mag=$'\e[1;35m'
+
+if [[ -z "$SEARCH_TERM" ]]; then
+  echo "Oop! Enter a search term..."
+else
+  echo ""
+  RETURNS=$(egrep -rnwl ${PWD} --include=\*.adoc --exclude-dir={drupal-build,_preview} -e $SEARCH_TERM)
+  for ITEM in $RETURNS
+    do printf ''${mag}'\e]8;;file:///'$ITEM'\e\\'$ITEM'\e]8;;\e\\\n'${mag}''
+  done
+fi
