@@ -1,19 +1,20 @@
 #!/usr/bin/env bash
 # 
 # Return all AsciiDoc files in current dir and lower that contain the search term.
-# Wrap sentence fragments in quotes.
+# Wrap sentence fragments search terms in quotes. For example, 
+# $ ff "bare-metal host"
 
 set -e
 
 SEARCH_TERM=$1
-mag=$'\e[1;35m'
+blue=$'\e[1;34m'
 
 if [[ -z "$SEARCH_TERM" ]]; then
   echo "Oop! Enter a search term..."
 else
   echo ""
-  RETURNS=$(egrep -rnwl ${PWD} --include=\*.adoc --exclude-dir={drupal-build,_preview} -e $SEARCH_TERM)
+  RETURNS=$(egrep -rwl ${PWD} --include=\*.adoc --exclude-dir={drupal-build,_preview} -e "$SEARCH_TERM")
   for ITEM in $RETURNS
-    do printf ''${mag}'\e]8;;file:///'$ITEM'\e\\'$ITEM'\e]8;;\e\\\n'${mag}''
+    do printf ''${blue}'\e]8;;file:///'$ITEM'\e\\'$ITEM'\e]8;;\e\\\n'${blue}''
   done
 fi
