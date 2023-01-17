@@ -2,7 +2,8 @@
 
 * `ocp-checkout`: Copy branch path (eg., `aireilly:xref-script`) from github UI and checkout that branch directly from anywhere.
 * `ocp-checkout-other`: Copy PR URL, and checkout that PR
-* `show-xrefs`: Copy a module and assembly path, calculate the available xref(s) with resolved context and title.  
+* `show-xrefs`: Copy a module and assembly path, calculate the available xref(s) with resolved context and title.
+* `ff`: Simple grep utility that presents search returns as clickable files in the cmd window.
 
 To use `show-xrefs` script, add the following line to `~/.gitconfig`:
 
