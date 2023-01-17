@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # 
-# Return all files in current dir and lower that contain the search term.
+# Return all AsciiDoc files in current dir and lower that contain the search term.
 # Wrap sentence fragments in quotes.
 
 set -e
