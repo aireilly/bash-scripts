@@ -13,7 +13,7 @@ if [[ -z "$SEARCH_TERM" ]]; then
   echo "Oop! Enter a search term..."
 else
   echo ""
-  RETURNS=$(egrep -rwl ${PWD} --include=\*.adoc --exclude-dir={drupal-build,_preview} -e "$SEARCH_TERM")
+  RETURNS=$(grep -E -rwl ${PWD} --include=\*.adoc --exclude-dir={drupal-build,_preview} -e "$SEARCH_TERM")
   for ITEM in $RETURNS
     do printf ''${blue}'\e]8;;file:///'$ITEM'\e\\'$ITEM'\e]8;;\e\\\n'${blue}''
   done
