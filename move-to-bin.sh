@@ -6,7 +6,8 @@ dest_dir="$HOME/bin"
 
 for file in "$source_dir"/*.sh; do
   if [ "$file" != "$source_dir/move-to-bin.sh" ]; then
-    mv "$file" "$dest_dir/"
+    file_no_ext=$(basename "$file" .sh)
+    cp "$file" "$dest_dir/$file_no_ext"
   fi
 done
 
