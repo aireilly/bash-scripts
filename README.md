@@ -16,6 +16,8 @@ python3 ~/bash-scripts/release-change-report.py --base-ref upstream/stage-3.2 st
 
 The report includes `.adoc` file counts, added and removed lines, line-composition charts, and a monthly timeline of commits unique to each branch. Commit counts include all repository paths. Use `--exclude PATHSPEC` one or more times to omit matching `.adoc` paths; the HTML output defaults to `release-change-report.html`.
 
+## show-xrefs
+
 To use `show-xrefs` script, add the following line to `~/.gitconfig`:
 
 ```
